@@ -1,4 +1,5 @@
-$(function () {
+
+ $(function () {
   loadProducts();
   $(".btnAdd").click(handleNewProduct);
   $(".products").on("click", ".btnDelete", handleDelete);
@@ -60,9 +61,7 @@ function loadoneProduct(){
             $("#showoneProductModal").modal("show");
             break
           }
-        }
-
-             }else {
+        }       }else {
         alert("please type product name");
       }
 
@@ -86,7 +85,7 @@ function handleDelete() {
   console.log(id);
 }
 
-//Add
+//Create
 function handleNewProduct() {
   const name = $("#productTitle").val();
   const price = $("#productPrice").val();
@@ -104,7 +103,7 @@ function handleNewProduct() {
     },
   });
 }
-//Create
+//Get all products
 function loadProducts() {
   $.ajax({
     url: "https://usman-recipes.herokuapp.com/api/products",
